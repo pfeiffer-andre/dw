@@ -1,0 +1,262 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+> SWF's basic concepts in more detail </TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="SimpleWebFront User Documentation"
+HREF="index.html"><LINK
+REL="UP"
+TITLE="Overview"
+HREF="chapter-overview.html"><LINK
+REL="PREVIOUS"
+TITLE="Basic Concepts"
+HREF="section-basic_concepts.html"><LINK
+REL="NEXT"
+TITLE="The created webpages"
+HREF="section-created_webpages.html"></HEAD
+><BODY
+CLASS="section"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>SimpleWebFront User Documentation</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="section-basic_concepts.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 1. Overview</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="section-created_webpages.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="section"
+><H1
+CLASS="section"
+><A
+NAME="section-detailed_basic_concepts"
+>SWF's basic concepts in more detail</A
+></H1
+><P
+>&#13;   As we already explained in the last section the basic working unit in the SWF-model is a <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>view</I
+></SPAN
+> which
+   basically represents a table. Aside from views, there are also groups. One or more views make up a group. 
+   Groups are the other conceptual
+   element in the SWF. They are nothing else then a container for views so that you can group together
+   views that share a common characteristic.
+  </P
+><P
+>  
+   Following now is a detailed explanation of the joins that are (implicitly) possible in a view.:
+  </P
+><DIV
+CLASS="section"
+><H2
+CLASS="section"
+><A
+NAME="AEN44"
+>Lookup-Joins</A
+></H2
+><DIV
+CLASS="example"
+><A
+NAME="AEN46"
+></A
+><P
+><B
+>Example 1-1. Performing a lookup-join</B
+></P
+><P
+>&#13;     Consider a simple database as it is depicted in the figure below.
+    </P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../images/lookup_example.png"></P
+></DIV
+><P
+>&#13;     We have a table named Invoice that has an attribute idEmployee(of type Integer). 
+     idEmployee specifies the employee, so it actually is a foreign key 
+     which references a data record of the Employee table. In the Employee-table we save the
+     name and the address for each idEmployee. 
+     In most situations you would like to see 
+     the name of the employee on an invoice and not a number identifying him, so you would perform 
+     a join of these two tables. Such simple joins are allowed by the SWF within the view-framework.
+    </P
+></DIV
+><DIV
+CLASS="formalpara"
+><P
+><B
+> So what is a lookup-join now more formally? . </B
+>
+     A lookup-join is a normal equi-join between 2 tables. We call it lookup-join because most of
+     the time we have an id (e.g. idEmployee) like an integer value 3 in a record(eg. invoice) and we want to 
+     <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>look up</I
+></SPAN
+> the value 3.
+    </P
+></DIV
+><P
+>&#13;     Since the DBDesigner4's visual model of a database is in some aspects similar to an EER-diagram of a
+     database, I also want to explain the meaning of a lookup-join in an EER-context. Entities in the EER-
+     model (which map to tables in DBD4's model) that have a 1:1 or 1:n relationship can be combined by
+     a lookup-join.
+   </P
+><P
+>&#13;    So if you have chosen the Main-Table of a view, you are presented a list of so called Lookup-Tables.
+    A Lookup-Table is a table that is referenced by the Main-Table. In other words the Main-Table has
+    a foreign key belonging to the Lookup-Table. Out of these list of lookup-Tables you can choose
+    which tables you want to have joined. But this will be explained in more detail in a later
+    section.
+   </P
+></DIV
+><DIV
+CLASS="section"
+><H2
+CLASS="section"
+><A
+NAME="AEN61"
+>NM-Table-joins</A
+></H2
+><DIV
+CLASS="example"
+><A
+NAME="AEN63"
+></A
+><P
+><B
+>Example 1-2. Performing an NM-Table-join</B
+></P
+><P
+>&#13;      Consider a simple database as it is depicted in the figure below.
+     </P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../images/nmTable_example.png"></P
+></DIV
+><P
+>&#13;     NM-relationships of the well-known (E)ER-diagram describe relations where one instance can have 
+     references to many instances of another entity and vice versa. The SWF tries to remodel that 
+     relationship back from the table-layer.
+     For example an invoice could have references to all the books that the customer just bought.   
+    </P
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="section-basic_concepts.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="section-created_webpages.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Basic Concepts</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="chapter-overview.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>The created webpages</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

@@ -1,0 +1,166 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+>The Template mechanism</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="SimpleWebFront Developer Documentation"
+HREF="index.html"><LINK
+REL="UP"
+TITLE="Overview"
+HREF="chapter-overview.html"><LINK
+REL="PREVIOUS"
+TITLE="Overview"
+HREF="chapter-overview.html"><LINK
+REL="NEXT"
+TITLE="Layouts"
+HREF="section-layouts.html"></HEAD
+><BODY
+CLASS="section"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>SimpleWebFront Developer Documentation</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="chapter-overview.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 1. Overview</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="section-layouts.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="section"
+><H1
+CLASS="section"
+><A
+NAME="section-template_mechanism"
+>The Template mechanism</A
+></H1
+><P
+>&#13;   As you will see in a moment, SWF's mechanism for generating webpages is pretty simple. It relies on template-files
+   that already provide all the functionality for the webpages. Actually most of the time only variables in the
+   template-files are set by SWF.
+  </P
+><P
+>&#13;   When the user clicks the <SPAN
+CLASS="guibutton"
+>Generate Webpages-Button</SPAN
+>, SWF reads the so-called template files.
+   String patterns of the form /*[[PATTERN]]*/ are expanded during this process. Next the changed file is written to
+   the output directory from memory. This simple transformation mechanism is true for the templatefile named
+   <TT
+CLASS="filename"
+>index.php</TT
+>.
+   For the other template-files it is a bit more complex since for each view one transformation is performed.
+  </P
+><P
+>&#13;   As a consequence the template files do not only provide the design of the generated webpages but also all of
+   its functionality.
+  </P
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="chapter-overview.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="section-layouts.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Overview</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="chapter-overview.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Layouts</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

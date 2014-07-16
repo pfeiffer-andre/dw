@@ -1,0 +1,346 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+>User-interface</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="SimpleWebFront User Documentation"
+HREF="index.html"><LINK
+REL="PREVIOUS"
+TITLE="How to contribute?"
+HREF="section-how_to_contribute.html"><LINK
+REL="NEXT"
+TITLE="General Options"
+HREF="section-general_options.html"></HEAD
+><BODY
+CLASS="chapter"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>SimpleWebFront User Documentation</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="section-how_to_contribute.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="section-general_options.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="chapter"
+><H1
+><A
+NAME="chapter-ui"
+></A
+>Chapter 2. User-interface</H1
+><DIV
+CLASS="TOC"
+><DL
+><DT
+><B
+>Table of Contents</B
+></DT
+><DT
+><A
+HREF="chapter-ui.html#section-ui_intro"
+>Introduction</A
+></DT
+><DT
+><A
+HREF="section-general_options.html"
+>General Options</A
+></DT
+><DT
+><A
+HREF="section-views.html"
+>Views</A
+></DT
+><DT
+><A
+HREF="section-view_editor.html"
+>The View Editor</A
+></DT
+><DT
+><A
+HREF="section-groups.html"
+>Groups</A
+></DT
+><DT
+><A
+HREF="section-group_editor.html"
+>The Group Editor</A
+></DT
+><DT
+><A
+HREF="section-grid_options.html"
+>Grid Options</A
+></DT
+><DT
+><A
+HREF="section-form_options.html"
+>Form Options</A
+></DT
+></DL
+></DIV
+><DIV
+CLASS="section"
+><H1
+CLASS="section"
+><A
+NAME="section-ui_intro"
+>Introduction</A
+></H1
+><P
+>&#13;   I hope that SWF's user-interface is easy to use and understand. If you are not satiesfied, 
+   or have any comments on it, I would welcome your feedback and possible suggestions.
+  </P
+><DIV
+CLASS="figure"
+><A
+NAME="AEN146"
+></A
+><P
+><B
+>Figure 2-1. User Interface - Overview</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../images/ui_overview.jpg"></P
+></DIV
+></DIV
+><P
+>&#13;   The user interface is divided into five different tabs. Each tab lets you enter some
+   specific information about the website you want to generate. To change between the
+   tabs, use the navigation menu on the left side.
+  </P
+><P
+>&#13;   Regardless of the active tab, you can perform one of the three standard operations
+   (Save, Generate Webpages, Close) by clicking on the respective button at the bottom of the
+   user-interface or by choosing the correct menu entry from <SPAN
+CLASS="guimenu"
+>File</SPAN
+>.
+  </P
+><P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>&#13;    <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Save</I
+></SPAN
+> saves the current configuration into the model file. Currently 
+    there is no (visual) feedback if saving was successful, but the program will notify you 
+    in the event of a failure or problem.
+    <DIV
+CLASS="caution"
+><P
+></P
+><TABLE
+CLASS="caution"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="../images/admonitions/caution.gif"
+HSPACE="5"
+ALT="Caution"></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>You also have to save the document in DBDesigner4 again or your changes will be lost.</P
+></TD
+></TR
+></TABLE
+></DIV
+>
+   </P
+></LI
+><LI
+><P
+> <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Close</I
+></SPAN
+> simply closes the application and returns to DBDesigner4.</P
+></LI
+><LI
+><P
+> <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Create Webpages</I
+></SPAN
+> finally starts the process of creating webpages. If successful
+    you will be notified.
+    <DIV
+CLASS="note"
+><P
+></P
+><TABLE
+CLASS="note"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="../images/admonitions/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>The Create Webpages button and the corresponding menu-entry is deactivated as long as necessary information
+     for creating the webpages is still missing.</P
+></TD
+></TR
+></TABLE
+></DIV
+>
+   </P
+></LI
+></OL
+><P
+>&#13;   Here's a complete list of what fields, options need to get filled out, so that the Create Webpages Button and
+   the corresponding menu entry is
+   activated:
+  </P
+><P
+></P
+><UL
+><LI
+><P
+>dbusername, dbpassword, dbhostname, dbname</P
+></LI
+><LI
+><P
+>webtitle, outputdirectory</P
+></LI
+><LI
+><P
+>One group with at least one view in it</P
+></LI
+></UL
+><P
+>&#13;   Without this information no reasonable/working webpages could be created. 
+  </P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="section-how_to_contribute.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="section-general_options.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>How to contribute?</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>General Options</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

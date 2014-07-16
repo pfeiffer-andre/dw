@@ -1,0 +1,552 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+>PHP-Code</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="SimpleWebFront Developer Documentation"
+HREF="index.html"><LINK
+REL="PREVIOUS"
+TITLE="Delphi-Code"
+HREF="chapter-delphi.html"></HEAD
+><BODY
+CLASS="chapter"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>SimpleWebFront Developer Documentation</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="chapter-delphi.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+>&nbsp;</TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="chapter"
+><H1
+><A
+NAME="chapter-php"
+></A
+>Chapter 3. PHP-Code</H1
+><P
+>&#13;  This chapter deals with the PHP-Code of the template-files of Layout Standard. While probably not that
+  many people have Delphi or Kylix installed. the PHP-source-code will hopefully interest more people.
+  Moreover it is necessary to include the PHP-soure in every binary distribution whereas this is not
+  necessary for the Delphi/Kylix code of the program.
+ </P
+><P
+>&#13;  You can find all of the PHP-source files in <TT
+CLASS="filename"
+>Data/Plugins/SimpleWebFront/Standard</TT
+>.
+ </P
+><P
+>&#13;  You should already know that there are four PHP source-files, each one responsible for one specific webpage. (indexpage,
+  Grid-View, Insert and Update-Popup Windows) The file <TT
+CLASS="filename"
+>commonFunctions.php</TT
+> contains
+  common functions that are used in several of the other files.
+ </P
+><P
+>&#13;  Moreover you should know that the PHP-files are pretty much self-contained. One could say that 
+  the interface to the SWF-program consists only
+  of string patterns of the form /*[[PATTERN]]*/. The SWF replaces these patterns in the process of creating the
+  webpages. What follows now is a list of all supported patterns for each of the files.
+ </P
+><DIV
+CLASS="table"
+><A
+NAME="AEN106"
+></A
+><P
+><B
+>Table 3-1. Patterns replaced in index.php:</B
+></P
+><TABLE
+BORDER="1"
+CLASS="CALSTABLE"
+><COL><COL><THEAD
+><TR
+><TH
+>Pattern</TH
+><TH
+>Description</TH
+><TH
+>Example</TH
+></TR
+></THEAD
+><TBODY
+><TR
+><TD
+>/*[[HEADING]]*/</TD
+><TD
+>The heading of the index-page. This is the Web-Title that the user enters.</TD
+><TD
+>"Bookshop";</TD
+></TR
+><TR
+><TD
+>/*[[IMAGE_NAMES]]*/</TD
+><TD
+>Will be expanded to an associative array that lists the filename of the icon for each view.</TD
+><TD
+>array ( "Tables.Customer"=&#62;"icons_02.png","Tables.Publisher"=&#62;"icons_04.png");</TD
+></TR
+><TR
+><TD
+>/*[[INDEX]]*/</TD
+><TD
+>Replaced by function calls to the php-function displayGroup for each group. These function
+           calls are put inside html-tables so that the group position is as specified by the user.</TD
+><TD
+>&#13;           &#60;table border="0"&#62;&#60;tr&#62;&#60;td&#62; &#60;?php displayGroup("Tables",array( "Customer"=&#62;"Tables_Customer.php?page=0&#38;mode=normal","Publisher"=&#62;"Tables_Publisher.php?page=0&#38;mode=normal") ); ?&#62;
+             &#60;/td&#62;&#60;/tr&#62;&#60;/table&#62;
+          </TD
+></TR
+></TBODY
+></TABLE
+></DIV
+><DIV
+CLASS="table"
+><A
+NAME="AEN127"
+></A
+><P
+><B
+>Table 3-2. Patterns replaced in gridTemplate.php:</B
+></P
+><TABLE
+BORDER="1"
+CLASS="CALSTABLE"
+><COL><COL><THEAD
+><TR
+><TH
+>Pattern</TH
+><TH
+>Description</TH
+><TH
+>Example</TH
+></TR
+></THEAD
+><TBODY
+><TR
+><TD
+>/*[[VIEWNAME]]*/</TD
+><TD
+>The name that will appear as heading.</TD
+><TD
+>"Book";</TD
+></TR
+><TR
+><TD
+>/*[[FILENAME]]*/</TD
+><TD
+>The name of the current file.</TD
+><TD
+>standard_book.php</TD
+></TR
+><TR
+><TD
+>/*[[TABLENAME]]*//</TD
+><TD
+>The name of the Main-Table.</TD
+><TD
+>book</TD
+></TR
+><TR
+><TD
+>/*[[DATATYPES]]*/</TD
+><TD
+>maintains a column=&#62;Datatype mapping for every column of the mainTable</TD
+><TD
+>array("name"=&#62;"INTEGER",...)</TD
+></TR
+><TR
+><TD
+>/*[[TABLEKEY]]*/</TD
+><TD
+>an array that contains the name of all columns that make up the primary key of the maintable</TD
+><TD
+>array("product_id")</TD
+></TR
+><TR
+><TD
+>/*[[TABLEDISPCOLS]]*/</TD
+><TD
+>an array that contains the name of all columns that should be displayed</TD
+><TD
+>array("product_id", "name","desc")</TD
+></TR
+><TR
+><TD
+>/*[[JOINTABLENAMES]]*/</TD
+><TD
+>A normal(numeral) array that lists the names of all Lookup-Tables</TD
+><TD
+>array('testTable1', 'testTable2')</TD
+></TR
+><TR
+><TD
+>/*[[JOINTABLES_KEY]]*/</TD
+><TD
+>For each joinTable present in $joinTablenames this associative array keeps an array with the column-names of the key</TD
+><TD
+>array ("product" =&#62; array ("productId"), "testTable" =&#62; array("Key_part1","Key_part2"))</TD
+></TR
+><TR
+><TD
+>/*[[JOINTABLES_DISPCOLS]]*/</TD
+><TD
+>For each joinTable present in $joinTablenames this associative array keeps an array with the names of all columns that should get displayes</TD
+><TD
+> array( "testTable1" =&#62; array( "testTable1Id","comment"), "testTable2" =&#62; array( "col1","col2","col3"))</TD
+></TR
+><TR
+><TD
+>/*[[NMTABLENAMES]]*/</TD
+><TD
+>A normal(numeral) array that lists the names of all NM-Tables</TD
+><TD
+>array('testTable1', 'testTable2')</TD
+></TR
+><TR
+><TD
+>/*[[NMTABLES_KEY]]*/</TD
+><TD
+>For each nmTable present in $joinTablenames this associative array keeps an array with the column-names of the key</TD
+><TD
+>array ("product" =&#62; array ("productId"), "testTable" =&#62; array("Key_part1","Key_part2"))</TD
+></TR
+><TR
+><TD
+>/*[[NMTABLES_DISPCOLS]]*/</TD
+><TD
+>For each nmTable present in $joinTablenames this associative array keeps an array with the names of all columns that should get displayes</TD
+><TD
+>array( "testTable1" =&#62; array( "testTable1Id","comment"), "testTable2" =&#62; array( "col1","col2","col3"))</TD
+></TR
+><TR
+><TD
+>/*[[NMTABLES_DATATYPES]]*/</TD
+><TD
+>For each nmTable present in $joinTablenames this associative array keeps an (again associative) array that has the form column=&#62;Datatype</TD
+><TD
+>array ("customer" =&#62; array ("customerId"=&#62; "INTEGER","Name"=&#62; "VARCHAR"))</TD
+></TR
+><TR
+><TD
+>/*[[CONNECTIONTABLENAMES]]*/</TD
+><TD
+>A normal(numeral) array that lists the names of all connection-Tables (tables that are introduced to realize an n:m relationship)</TD
+><TD
+>array('testTable1', 'testTable2')</TD
+></TR
+><TR
+><TD
+>/*[[WHERE_CONSTRAINT]]*/</TD
+><TD
+>The whereConstraint that the user has entered;doesn't begin with WHERE</TD
+><TD
+>book.isbn="08850238"</TD
+></TR
+><TR
+><TD
+>/*[[ROWSPERPAGE]]*/</TD
+><TD
+>the number of data tuples to be shown on a page</TD
+><TD
+>20</TD
+></TR
+><TR
+><TD
+>/*[[GRID_AS_POPUP]]*/</TD
+><TD
+>a boolean value that tells us if this (grid-)window is shown as a popup or not</TD
+><TD
+>true</TD
+></TR
+><TR
+><TD
+>/*[[FORMHEIGHT]]*/, /*[[FORMWIDTH]]*/,/*[[FORMX]]*/,/*[[FORMY]]*/</TD
+><TD
+>the dimensions of the update and insert-window</TD
+><TD
+>500</TD
+></TR
+><TR
+><TD
+>/*[[COLUMN_CAPTIONS]]*/</TD
+><TD
+>An array describing the (user-defined) captions of all columns that will shown to the user instead of the db-names. The qualified db column-name is used to index the array</TD
+><TD
+>array('product.Name' =&#62; 'Name',...)</TD
+></TR
+><TR
+><TD
+> /*[[COLUMN_WIDTHS]]*/</TD
+><TD
+>An associative array that lists all columns that have a width specified with their respective width-values in pixels.The qualified db column-name is used to index the array</TD
+><TD
+>array("testTable1.column1" =&#62; 55)</TD
+></TR
+><TR
+><TD
+>/*[[COLUMN_TRUNCATE_CHARS]]*/</TD
+><TD
+>An associative array that stores all columns that should truncate their contents to a specified number of characters;The qualified db column-name is used to index the array</TD
+><TD
+>array("testTable1.column1" =&#62; 5)</TD
+></TR
+><TR
+><TD
+>/*[[KEY_MAPPING]]*/</TD
+><TD
+>This array stores a mapping of qualified column names to the (qualified) column names they reference. Consequently the index consists only of qualified foreign keynames; their value denotes the column they are refering to;</TD
+><TD
+>array ( "Book.Publisher_idPublisher"=&#62;"Publisher.idPublisher")</TD
+></TR
+></TBODY
+></TABLE
+></DIV
+><DIV
+CLASS="table"
+><A
+NAME="AEN224"
+></A
+><P
+><B
+>Table 3-3. Patterns replaced in updateTemplate.php and insertTemplate.php:</B
+></P
+><TABLE
+BORDER="1"
+CLASS="CALSTABLE"
+><COL><COL><THEAD
+><TR
+><TH
+>Pattern</TH
+><TH
+>Description</TH
+><TH
+>Example</TH
+></TR
+></THEAD
+><TBODY
+><TR
+><TD
+>/*[[TABLENAME]]*//</TD
+><TD
+>The name of the Main-Table.</TD
+><TD
+>book</TD
+></TR
+><TR
+><TD
+>/*[[DATATYPES]]*/</TD
+><TD
+>maintains a column=&#62;Datatype mapping for every column of the mainTable</TD
+><TD
+>array("name"=&#62;"INTEGER",...)</TD
+></TR
+><TR
+><TD
+>/*[[TABLEKEY]]*/</TD
+><TD
+>an array that contains the name of all columns that make up the primary key of the maintable</TD
+><TD
+>array("product_id")</TD
+></TR
+><TR
+><TD
+>/*[[TABLEDISPCOLS]]*/</TD
+><TD
+>an array that contains the name of all columns that should be displayed</TD
+><TD
+>array("product_id", "name","desc")</TD
+></TR
+><TR
+><TD
+>/*[[JOINTABLENAMES]]*/</TD
+><TD
+>A normal(numeral) array that lists the names of all Lookup-Tables</TD
+><TD
+>array('testTable1', 'testTable2')</TD
+></TR
+><TR
+><TD
+>/*[[JOINTABLES_KEY]]*/</TD
+><TD
+>For each joinTable present in $joinTablenames this associative array keeps an array with the column-names of the key</TD
+><TD
+>array ("product" =&#62; array ("productId"), "testTable" =&#62; array("Key_part1","Key_part2"))</TD
+></TR
+><TR
+><TD
+>/*[[JOINTABLES_DISPCOLS]]*/</TD
+><TD
+>For each joinTable present in $joinTablenames this associative array keeps an array with the names of all columns that should get displayes</TD
+><TD
+> array( "testTable1" =&#62; array( "testTable1Id","comment"), "testTable2" =&#62; array( "col1","col2","col3"))</TD
+></TR
+><TR
+><TD
+>/*[[NMTABLENAMES]]*/</TD
+><TD
+>A normal(numeral) array that lists the names of all NM-Tables</TD
+><TD
+>array('testTable1', 'testTable2')</TD
+></TR
+><TR
+><TD
+>/*[[NMTABLES_KEY]]*/</TD
+><TD
+>For each nmTable present in $joinTablenames this associative array keeps an array with the column-names of the key</TD
+><TD
+>array ("product" =&#62; array ("productId"), "testTable" =&#62; array("Key_part1","Key_part2"))</TD
+></TR
+><TR
+><TD
+>/*[[NMTABLES_DISPCOLS]]*/</TD
+><TD
+>For each nmTable present in $joinTablenames this associative array keeps an array with the names of all columns that should get displayes</TD
+><TD
+>array( "testTable1" =&#62; array( "testTable1Id","comment"), "testTable2" =&#62; array( "col1","col2","col3"))</TD
+></TR
+><TR
+><TD
+>/*[[NMTABLES_DATATYPES]]*/</TD
+><TD
+>For each nmTable present in $joinTablenames this associative array keeps an (again associative) array that has the form column=&#62;Datatype</TD
+><TD
+>array ("customer" =&#62; array ("customerId"=&#62; "INTEGER","Name"=&#62; "VARCHAR"))</TD
+></TR
+><TR
+><TD
+>/*[[CONNECTIONTABLENAMES]]*/</TD
+><TD
+>A normal(numeral) array that lists the names of all connection-Tables (tables that are introduced to realize an n:m relationship)</TD
+><TD
+>array('testTable1', 'testTable2')</TD
+></TR
+><TR
+><TD
+>/*[[COLUMN_CAPTIONS]]*/</TD
+><TD
+>An array describing the (user-defined) captions of all columns that will shown to the user instead of the db-names. The qualified db column-name is used to index the array</TD
+><TD
+>array('product.Name' =&#62; 'Name',...)</TD
+></TR
+><TR
+><TD
+> /*[[COLUMN_WIDTHS]]*/</TD
+><TD
+>An associative array that lists all columns that have a width specified with their respective width-values in pixels.The qualified db column-name is used to index the array</TD
+><TD
+>array("testTable1.column1" =&#62; 55)</TD
+></TR
+><TR
+><TD
+>/*[[KEY_MAPPING]]*/</TD
+><TD
+>This array stores a mapping of qualified column names to the (qualified) column names they reference. Consequently the index consists only of qualified foreign keynames; their value denotes the column they are refering to;</TD
+><TD
+>array ( "Book.Publisher_idPublisher"=&#62;"Publisher.idPublisher")</TD
+></TR
+></TBODY
+></TABLE
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="chapter-delphi.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>&nbsp;</TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Delphi-Code</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>&nbsp;</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

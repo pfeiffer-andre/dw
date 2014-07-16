@@ -1,0 +1,262 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+>Layouts</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="SimpleWebFront Developer Documentation"
+HREF="index.html"><LINK
+REL="UP"
+TITLE="Overview"
+HREF="chapter-overview.html"><LINK
+REL="PREVIOUS"
+TITLE="The Template mechanism"
+HREF="section-template_mechanism.html"><LINK
+REL="NEXT"
+TITLE="Delphi-Code"
+HREF="chapter-delphi.html"></HEAD
+><BODY
+CLASS="section"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>SimpleWebFront Developer Documentation</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="section-template_mechanism.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 1. Overview</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="chapter-delphi.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="section"
+><H1
+CLASS="section"
+><A
+NAME="section-layouts"
+>Layouts</A
+></H1
+><P
+>&#13;   We have ignored some things till now. Especially we have not discussed how Layouts (I'm refering to the
+   gui-element layout.) are related to the whole story.
+  </P
+><P
+>&#13;   In the "layout" - drop-down listbox of the program (on tab "General") you can select a layout. At the moment
+   only one layout is provided, namely "Standard". When the SWF starts,
+   it scans <TT
+CLASS="filename"
+>Data/Plugins/SimpleWebFront/Standard</TT
+> for subdirectories. All
+   subdirs found are listed as available layouts in the drop-down box. So a layout is basically a directory 
+   <TT
+CLASS="filename"
+>directoryname</TT
+> with a file called <TT
+CLASS="filename"
+>directoryname.ini</TT
+> in it. The
+   ini-file specifies which other files are part of the layout and names them. 
+  </P
+><P
+>&#13;   A ini-file is expected to have a section "General" with the following keys:
+
+   <DIV
+CLASS="informaltable"
+><P
+></P
+><A
+NAME="AEN49"
+></A
+><TABLE
+BORDER="1"
+CLASS="CALSTABLE"
+><COL><COL><COL><THEAD
+><TR
+><TH
+>Key</TH
+><TH
+>Required/Optional</TH
+><TH
+>Description</TH
+></TR
+></THEAD
+><TBODY
+><TR
+><TD
+><TT
+CLASS="filename"
+>GridTemplateFilename</TT
+></TD
+><TD
+>Required</TD
+><TD
+>The filename of the Grid-Template. The Grid-Template is used for creating the Grid-View of a view.</TD
+></TR
+><TR
+><TD
+><TT
+CLASS="filename"
+>IndexTemplateFilename</TT
+></TD
+><TD
+>Required</TD
+><TD
+>The filename of the Index-Template. The Index-Template is used for creating the index.html file.</TD
+></TR
+><TR
+><TD
+><TT
+CLASS="filename"
+>UpdateTemplateFilename</TT
+></TD
+><TD
+>Required</TD
+><TD
+>The filename of the Update-Template. The Update-Template is used for creating the Update-View of a view.</TD
+></TR
+><TR
+><TD
+><TT
+CLASS="filename"
+>InsertTemplateFilename</TT
+></TD
+><TD
+>Required</TD
+><TD
+>The filename of the Insert-template. The Insert-Template is used for creating the Insert-View of a view.</TD
+></TR
+><TR
+><TD
+><TT
+CLASS="filename"
+>NeededDirs</TT
+></TD
+><TD
+>optional</TD
+><TD
+>Contains the names of directories which should be copied into the Output-directory without processing.</TD
+></TR
+><TR
+><TD
+><TT
+CLASS="filename"
+>NeededFiles</TT
+></TD
+><TD
+>optional</TD
+><TD
+>Contains the names of files which should be copied into the Output-directory without processing.</TD
+></TR
+></TBODY
+></TABLE
+><P
+></P
+></DIV
+>
+  </P
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="section-template_mechanism.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="chapter-delphi.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>The Template mechanism</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="chapter-overview.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Delphi-Code</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

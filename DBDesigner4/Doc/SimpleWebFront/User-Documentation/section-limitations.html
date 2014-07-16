@@ -1,0 +1,246 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+>Two general limitations</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="SimpleWebFront User Documentation"
+HREF="index.html"><LINK
+REL="UP"
+TITLE="Limitations"
+HREF="chapter-limitations.html"><LINK
+REL="PREVIOUS"
+TITLE="Limitations"
+HREF="chapter-limitations.html"></HEAD
+><BODY
+CLASS="section"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>SimpleWebFront User Documentation</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="chapter-limitations.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 3. Limitations</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+>&nbsp;</TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="section"
+><H1
+CLASS="section"
+><A
+NAME="section-limitations"
+>Two general limitations</A
+></H1
+><DIV
+CLASS="section"
+><H2
+CLASS="section"
+><A
+NAME="AEN409"
+>Using the SWF means adapting to its model</A
+></H2
+><P
+> SWF's model is based on views. if you cannot model/design something as a view it can't be
+    handled by the SWF or shown on the created webpages.
+   </P
+><P
+>&#13;    As explained in <A
+HREF="section-basic_concepts.html"
+>the Section called <I
+>Basic Concepts</I
+> in Chapter 1</A
+> and in <A
+HREF="section-detailed_basic_concepts.html"
+>the Section called <I
+>SWF's basic concepts in more detail</I
+> in Chapter 1</A
+>
+    a view basically represents a table. (often called the Main-Table) It is possible to attatch a select-clause (projection)
+    as well as a where-clause(selection) to a view. Moreover one can integrate Lookup-Tables and NM-Tables into this view but
+    let's face it. This is far too restrictive. Sometimes you would like for example to have a lookup-table joined
+    with another table but this is simply not possible.
+   </P
+><P
+>&#13;    if it is not clear yet, consider the following example:
+    <DIV
+CLASS="example"
+><A
+NAME="AEN416"
+></A
+><P
+><B
+>Example 3-1. Limitation example</B
+></P
+><P
+>&#13;      Consider a simple database as it is depicted in the figure below.
+     </P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../images/limitation_inherit_example.png"></P
+></DIV
+><P
+>&#13;      You would like to create view that shows each course together with its leader. So we would
+      select the table course as our main-Table, and could consequently perform a lookup-join with
+      the table leader since course has the foreign key of leader. Unfortunatley this is not enough
+      if we want to see the name of the leader and not only its number, because in our case
+      leader inherits from person, which means that the name-attribute is stored in the person-table
+      and not in the leader-table. We would need a way to have the leader-table also joined with
+      the person table. This is not possible with the SWF though.
+     </P
+></DIV
+>
+   </P
+><P
+>&#13;    There is no real clean workaround for this problem either. Actually your only option is to change the database-model.
+    In our example this would mean to store the name and all other person attributes in the leader table, thus not
+    inheriting leader from person. In our example this might be okay, but in other circumstances it may be not.
+   </P
+></DIV
+><DIV
+CLASS="section"
+><H2
+CLASS="section"
+><A
+NAME="AEN426"
+>Domain-specific operations are not supported</A
+></H2
+><P
+>&#13;    This is best explained in the form of an example.
+    <DIV
+CLASS="example"
+><A
+NAME="AEN429"
+></A
+><P
+><B
+>Example 3-2. Domain-specific-Limitation example</B
+></P
+><P
+>&#13;      Consider a simple database as it is depicted in the figure below.
+     </P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../images/limitation_domain_specific_example.png"></P
+></DIV
+><P
+>&#13;      On first thought this seems to be a good example for the abilities of the SWF. We could make a view
+      "Invoice" that joins with the Employee as well as the book table. So assume we are in a bookshop,
+      have this database model, and a customer buys a book. We could create a new invoice in our view
+      Invoice and fill out the name of the employee and all the books that the customer bought.
+     </P
+><P
+>&#13;      On second thought we notice that selling a book (creating an invoice for a customer) also means
+      having one book less in our bookshop. We would have to decrement the attribute num_available in the
+      table book automatically when creating an invoice. This is not supported by the SWF.
+     </P
+></DIV
+>
+
+     The only solution for this problem is to manually edit the generated webpages. This should not be too
+     difficult if you know PHP.
+   </P
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="chapter-limitations.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>&nbsp;</TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Limitations</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="chapter-limitations.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>&nbsp;</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

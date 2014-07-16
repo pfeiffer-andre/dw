@@ -1,0 +1,170 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+>Basic Concepts</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="SimpleWebFront User Documentation"
+HREF="index.html"><LINK
+REL="UP"
+TITLE="Overview"
+HREF="chapter-overview.html"><LINK
+REL="PREVIOUS"
+TITLE="Overview"
+HREF="chapter-overview.html"><LINK
+REL="NEXT"
+TITLE=" SWF's basic concepts in more detail "
+HREF="section-detailed_basic_concepts.html"></HEAD
+><BODY
+CLASS="section"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>SimpleWebFront User Documentation</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="chapter-overview.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 1. Overview</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="section-detailed_basic_concepts.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="section"
+><H1
+CLASS="section"
+><A
+NAME="section-basic_concepts"
+>Basic Concepts</A
+></H1
+><P
+>&#13;   Whereas most web applications allow you to work with tables only, the SimpleWebFront extends this concept
+   and has support for simple views.
+  </P
+><P
+>&#13;   A view in SWF's notion is similiar to the views you might know from sql.
+   Basically a SWF-view is defined as a 
+   <B
+CLASS="command"
+>select SELECTCLAUSE from table where WHERECLAUSE</B
+>
+   where the user can specify the selectclause and whereclause. A whereclause doesn't 
+   include a GROUP BY-construct.
+  </P
+><P
+>A view in SWF is thus not the same as a view in sql, since (usually) a view in sql
+   can be defined by any legal select-statement, whereas an SWF-view always has the above syntax.
+   So basically an SWF-view is confined to a single table, but this is not
+   fully true because some sort of joins are implicitly allowed. We will cover that in the next
+   section.
+  </P
+><P
+>&#13;   The limitation of one table per view is primarily necessary to allow the user 
+   to update and delete data records in all views. We often call the table that the view is primarily
+   based on Main-Table to avoid confusion with other (join-) tables.
+  </P
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="chapter-overview.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="section-detailed_basic_concepts.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Overview</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="chapter-overview.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>SWF's basic concepts in more detail</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

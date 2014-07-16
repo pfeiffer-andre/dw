@@ -1,0 +1,309 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+>Grid Options</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="SimpleWebFront User Documentation"
+HREF="index.html"><LINK
+REL="UP"
+TITLE="User-interface"
+HREF="chapter-ui.html"><LINK
+REL="PREVIOUS"
+TITLE=" The Group Editor "
+HREF="section-group_editor.html"><LINK
+REL="NEXT"
+TITLE="Form Options"
+HREF="section-form_options.html"></HEAD
+><BODY
+CLASS="section"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>SimpleWebFront User Documentation</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="section-group_editor.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Chapter 2. User-interface</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="section-form_options.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="section"
+><H1
+CLASS="section"
+><A
+NAME="section-grid_options"
+>Grid Options</A
+></H1
+><P
+>&#13;   The configuration options on this tab directly 
+   affect the produced gridview-file. The gridview-file displays the actual content of the view or
+   more precisely displays the result of the select-statement that defines the view.
+  </P
+><DIV
+CLASS="figure"
+><A
+NAME="AEN327"
+></A
+><P
+><B
+>Figure 2-7. Grid Options Tab</B
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="../images/grid_options.jpg"></P
+></DIV
+></DIV
+><P
+>&#13;   On the left side it is possible to see the list of columns for each view of each group. You
+   can select or deselect a specific column for display by clicking on the check-field next to its name.
+   Selected for display in this context means that this column will be shown in the produced grid-view.
+   Moreover each column has options associated with it. The options of the currently highlited column in the list
+   are displayed and can be changed in the <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Selected Column-Column Options</I
+></SPAN
+> group-field on the right side.
+  </P
+><P
+>&#13;   <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Selected Column-Column Options:</I
+></SPAN
+> 
+   <P
+></P
+><UL
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Column caption</I
+></SPAN
+> is the name that will be used to label this column in the 
+    generated grid-view.</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Fixed column width</I
+></SPAN
+> allows you to specify a fixed width for this column.
+     Since a column is displayed as the column of an HTML-table, this option maps to the CSS-attribute
+     'width:[The value you entered]px;overflow:hidden;' of the td-tag. Moreover 'table-layout:fixed' is used in the
+     starting table-tag. If you don't know HTML/CSS, you don't have to understand this, but read the note below.
+     <DIV
+CLASS="note"
+><P
+></P
+><TABLE
+CLASS="note"
+WIDTH="100%"
+BORDER="0"
+><TR
+><TD
+WIDTH="25"
+ALIGN="CENTER"
+VALIGN="TOP"
+><IMG
+SRC="../images/admonitions/note.gif"
+HSPACE="5"
+ALT="Note"></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+><P
+>It depends on the browser if the fixed-column-width statement will really result in a fixed column
+     width. Mozilla ignores it as far as I know, the Internet Explorer will render it correctly.</P
+></TD
+></TR
+></TABLE
+></DIV
+>
+    </P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Truncate displayed data:</I
+></SPAN
+>
+      Since some browsers ignore the fixed-width-statement as explained above you can also let the SWF
+      truncate your data to a specified number of characters. By specifying the maximum number of characters for a
+      column you can indirectly control the width of the column.
+    </P
+></LI
+></UL
+>
+  </P
+><P
+>&#13;   On the right, upper side there is the <SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Selected View-Grid Options</I
+></SPAN
+> section.
+   <P
+></P
+><UL
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Rows per Page</I
+></SPAN
+> determines the number of records that are maximally allowed
+    on the grid-view. If the result of the select-statement contains more than the given number of records the result
+    is divided into several pages.</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="emphasis"
+><I
+CLASS="emphasis"
+>Use composed column names</I
+></SPAN
+> changes the Column captions of all columns in the
+    selected view. If a caption has not been modified by the user it will be replaced by its qualified name 
+    (tablename.columnname) or a qualified name will be replaced by its simple name.
+    </P
+></LI
+><LI
+><P
+>The <SPAN
+CLASS="guibutton"
+>Advanced Grid Settings-Button</SPAN
+> is only activated if the view is part of
+     a group which has the Popup-option enabeled. If the button is not disabled clicking the button shows a dialog where 
+     you can enter the screen coordinates for the view to popup (The position the popup-window takes when the user
+     clicks on the respective link on the index-page).
+    </P
+></LI
+></UL
+>
+  </P
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="section-group_editor.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="index.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="section-form_options.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>The Group Editor</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="chapter-ui.html"
+ACCESSKEY="U"
+>Up</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Form Options</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

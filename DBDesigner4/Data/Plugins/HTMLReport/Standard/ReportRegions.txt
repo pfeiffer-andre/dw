@@ -1,0 +1,13 @@
+<table cellpadding="0" cellspacing="2" border="0" width="100%">
+  <tr>
+    <td class="fontXB"><i><?=$Regionname?></i><hr></td>
+  </tr>
+  <tr>
+    <td bgcolor="#eef4ff">
+<? include 'ReportTables.txt'; ?>
+    </td>
+  </tr>
+  <tr>
+    <td><hr><br></td>
+  </tr>
+</table>

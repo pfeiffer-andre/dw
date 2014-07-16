@@ -1,0 +1,17 @@
+Just run install.sh as root in order to install these Kylix 3
+libraries.
+
+Step by step:
+1. > su
+2. enter root password
+3. # ./install.sh
+4. # exit
+
+
+You can find the latest version of this package at http://kylixlibs.sf.net/
+
+These libraries are distributed under GPL, you can read license terms at
+http://www.gnu.org/licenses/gpl.html
+
+-- 
+Linas Jakucionis Brovienas <brovienas@mailsurf.com>
